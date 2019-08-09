@@ -13,5 +13,18 @@ public interface UserMapper {
     // 4. 根据用户id删除用户
 
     // 5. 根据用户id更新用户
+    
+    @Select("select * from t_user")
+    List<User> findAll();
+
+    User findById(Integer id);
+
+    //mybatis的增删改可以定义Integer|Long|boolean三种返回值类型
+    void insertUser(User user);
+
+    void updateUser(User user);
+
+    void deleteById(Integer id);
+
 
 }
